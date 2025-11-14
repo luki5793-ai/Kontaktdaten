@@ -1,0 +1,30 @@
+{
+  "name": "contact-extraction-actor",
+  "version": "1.0.0",
+  "description": "Apify Actor for extracting contact information of IT leaders and hiring managers",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "apify",
+    "actor",
+    "contact-extraction",
+    "scraping",
+    "crawlee"
+  ],
+  "author": "Apify",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "apify": "^3.1.10",
+    "crawlee": "^3.7.0",
+    "playwright": "^1.40.0",
+    "puppeteer": "^21.6.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luki5793-ai/Kontaktdaten"
+  }
+}

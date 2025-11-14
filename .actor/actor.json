@@ -1,0 +1,39 @@
+{
+  "actorSpecification": 1,
+  "name": "contact-extraction-actor",
+  "title": "IT Leaders & Hiring Managers Contact Extractor",
+  "description": "Extract contact information (name, email, phone, position) of IT leaders and hiring managers from companies using multi-source scraping (company websites, LinkedIn, Xing).",
+  "version": "1.0.0",
+  "meta": {
+    "templateId": "js-crawlee"
+  },
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "./Dockerfile",
+  "readme": "./README.md",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Contact Data",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "company",
+              "firstName",
+              "lastName",
+              "email",
+              "jobTitle",
+              "phone",
+              "location"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {}
+          }
+        }
+      }
+    }
+  }
+}
