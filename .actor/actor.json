@@ -1,13 +1,38 @@
 {
-  "version": "1.0.0",
+  "actorSpecification": 1,
   "name": "it-contact-scraper",
+  "version": "1.0.0",
   "title": "IT Contact Scraper (CTO/IT + Hiring Managers)",
   "description": "Extrahiert Kontaktdaten (max. 2 Personen pro Firma) aus Unternehmensseiten, LinkedIn, XING und Impressum.",
   "buildTag": "latest",
-  "main": "src/main.js",
-  "memory": 2048,
-  "timeout": 3600000,
-  "defaultRunOptions": {
-    "timeout": 3600000
+  "dockerfile": "./Dockerfile",
+  "input": "./INPUT_SCHEMA.json",
+  "readme": "./README.md",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Contact Data",
+      "description": "Extracted contact information",
+      "views": {
+        "overview": {
+          "title": "Overview",
+          "transformation": {
+            "fields": [
+              "company",
+              "firstName",
+              "lastName",
+              "email",
+              "phone",
+              "jobTitle",
+              "source"
+            ]
+          },
+          "display": {
+            "component": "table",
+            "properties": {}
+          }
+        }
+      }
+    }
   }
 }
