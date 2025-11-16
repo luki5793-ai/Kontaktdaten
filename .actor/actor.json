@@ -6,7 +6,7 @@
   "description": "Extrahiert Kontaktdaten (max. 2 Personen pro Firma) aus Unternehmensseiten, LinkedIn, XING und Impressum.",
   "buildTag": "latest",
   "dockerfile": "./Dockerfile",
-  "input": "./.actor/INPUT_SCHEMA.json",
+  "input": "./INPUT_SCHEMA.json",
   "readme": "./README.md",
   "storages": {
     "dataset": {
