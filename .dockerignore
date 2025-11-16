@@ -1,0 +1,6 @@
+.git
+node_modules
+apify_storage
+*.log
+*.md
+.DS_Store
