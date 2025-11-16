@@ -1,24 +1,46 @@
 {
+  "title": "IT Contact Scraper Input",
   "type": "object",
+  "schemaVersion": 1,
   "properties": {
     "companies": {
+      "title": "Unternehmensnamen",
       "type": "array",
-      "items": { "type": "string" },
-      "description": "Array von Unternehmensnamen (z.B. [\"SAP\", \"Siemens\"])."
+      "description": "Liste der Unternehmen, für die Kontakte gesucht werden sollen.",
+      "editor": "stringList",
+      "example": ["SAP", "Siemens", "Bosch"],
+      "prefill": ["SAP", "Siemens"],
+      "items": {
+        "type": "string"
+      }
     },
     "region": {
-      "type": ["string", "null"],
-      "description": "Optional: Land/Region für präzisere Suche (z.B. \"Germany\" / \"DE\")."
+      "title": "Region/Land",
+      "type": "string",
+      "description": "Optional: Land oder Region für präzisere Suche (z.B. \"Germany\", \"DE\", \"Austria\").",
+      "editor": "textfield",
+      "example": "Germany",
+      "prefill": "Germany"
     },
     "maxConcurrency": {
+      "title": "Max. Gleichzeitige Anfragen",
       "type": "integer",
+      "description": "Maximale Anzahl gleichzeitiger Browser-Instanzen. Höhere Werte = schneller, aber mehr Ressourcen.",
+      "editor": "number",
       "default": 2,
-      "description": "Maximale gleichzeitige Browser-Instanzen für PlaywrightCrawler."
+      "minimum": 1,
+      "maximum": 10,
+      "prefill": 2
     },
     "rateLimitMs": {
+      "title": "Rate Limit (Millisekunden)",
       "type": "integer",
+      "description": "Minimale Wartezeit zwischen Requests an verschiedene Domains in Millisekunden.",
+      "editor": "number",
       "default": 1000,
-      "description": "Minimale Wartezeit zwischen Requests an verschiedene Domains (ms)."
+      "minimum": 100,
+      "maximum": 5000,
+      "prefill": 1000
     }
   },
   "required": ["companies"]
